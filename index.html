@@ -5,17 +5,68 @@
     <title>SGA Helper</title>
 </head>
 
-<body>
-    <h1>SGA Helper</h1>
-    <p>Um bookmarket que acrescenta a seguinte funcionalidade ao SGA:</p>
-    <img src="SGAHelper.gif">
+<style>
+    main {
+        max-width: 840px;
+        margin: auto;
+    }
 
-    <p>Para adicionar ao seu navegador, basta arrastar o link abaixo para a sua barra de favoritos:</p>
-    <p>
-        <a
-            href="javascript:void%20function(){const%20a=document.querySelectorAll(%22%23class-record-presence-table%20tr%22);for(let%20b%20of%20a){const%20a=b.querySelectorAll(%22td%22);if(0===a.length)continue;let%20c=a[3],d=b.querySelectorAll(%22input[type=checkbox]%22);c.style.cursor=%22pointer%22,c.addEventListener(%22click%22,()=%3E{for(let%20a%20of%20d)a.checked=!a.checked})}}();">SGA
-            Helper</a>
-    </p>
+    h1 {
+        border-bottom: 2px solid #445aa8;
+        margin-bottom: 2rem;
+    }
+
+    .preview {
+        text-align: center;
+        margin: 2rem 0;
+    }
+
+    .linkp {
+        text-align: center;
+    }
+
+    .bmlink {
+        box-shadow: inset 0px 1px 0px 0px #7a8eb9;
+        background: linear-gradient(to bottom, #637aad 5%, #5972a7 100%);
+        background-color: #637aad;
+        border: 1px solid #314179;
+        display: inline-block;
+        cursor: pointer;
+        color: #ffffff;
+        font-family: Arial;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 9px 25px;
+        text-decoration: none;
+    }
+
+    .footer {
+        text-align: center;
+        margin-top: 3rem;
+        font-size: small;
+    }
+</style>
+
+<body>
+    <main>
+        <h1>SGA Helper</h1>
+        <p>Um bookmarket que acrescenta a seguinte funcionalidade ao SGA:</p>
+        <p class="preview">
+            <img src=" SGAHelper.gif" alt="" srcset="">
+        </p>
+        <p>Para adicionar o bookmarklet ao seu navegador, basta arrastar o link abaixo para a sua barra de favoritos:
+        </p>
+        <p class="linkp">
+            <a class="bmlink"
+                href="javascript:void%20function(){const%20a=document.querySelectorAll(%22%23class-record-presence-table%20tr%22);for(let%20b%20of%20a){const%20a=b.querySelectorAll(%22td%22);if(0===a.length)continue;let%20c=a[3],d=b.querySelectorAll(%22input[type=checkbox]%22);c.style.cursor=%22pointer%22,c.addEventListener(%22click%22,()=%3E{for(let%20a%20of%20d)a.checked=!a.checked})}}();">SGA
+                Helper
+            </a>
+        </p>
+        <p class="footer">
+            O código-fonte completo encontra-se disponível em
+            <a href="https://github.com/marxvdl/sgahelper">https://github.com/marxvdl/sgahelper</a>
+        </p>
+    </main>
 
 
 </body>
