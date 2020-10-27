@@ -1,0 +1,12 @@
+{
+  "name": "sgahelper",
+  "version": "1.0.0",
+  "description": "Bookmarklet com aprimoramentos para o SGA",
+  "main": "sgahelper.js",
+  "author": "Marx Linden",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "bookmarkleter": "^1.0.1"
+  }
+}

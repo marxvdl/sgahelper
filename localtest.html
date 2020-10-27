@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title> SGA - Sistema de Gestão Acadêmica</title>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+  <![endif]-->
+  <meta content="authenticity_token" name="csrf-param">
+<meta content="i/1+PtT2FXZhCQx3OxLGe6KljSfWpfTDUa+58YHba/s=" name="csrf-token">
+
+  <link href="localtest_arquivos/application-a3178d6ab58e38dda7f7b4102a0cc8e6.css" media="all" rel="stylesheet" type="text/css">
+  <script src="localtest_arquivos/application-6f4f2cb6731e91bb933ba101789a0c05.js" type="text/javascript"></script><style type="text/css"></style><style>.cke{visibility:hidden;}</style>
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For third-generation iPad with high-resolution Retina display: -->
+<!-- Size should be 144 x 144 pixels -->
+<link href="https://sga.ifb.edu.br/assets/SGA_144-df849c5a7f3b3283ff9bde2e86fb8aba.png" rel="SGA" sizes="144x144" type="image/png">
+
+<!-- For iPhone with high-resolution Retina display: -->
+<!-- Size should be 114 x 114 pixels -->
+<link href="https://sga.ifb.edu.br/assets/SGA_114-6ab1089e506f3a2b5c24185e41df87b7.png" rel="SGA" sizes="114x114" type="image/png">
+
+<!-- For first- and second-generation iPad: -->
+<!-- Size should be 72 x 72 pixels -->
+<link href="https://sga.ifb.edu.br/assets/SGA_72-8bf9573e8d05cbad6012e28d91381146.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+
+<!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+<!-- Size should be 57 x 57 pixels -->
+<link href="https://sga.ifb.edu.br/assets/SGA_57-f4bb92463119e60ddab6652a1e480a6e.png" rel="apple-touch-icon-precomposed" type="image/png">
+</head>
+
+<body data-action="class_record_presences_day" data-controller="class_records">  
+  <div id="loadingDiv" class="modal bordeless">
+    <div id="ajax_loading"></div>
+  </div>
+
+  
+
+    <!-- Menu superior -->
+  <div class="navbar">
+        <div class="navbar-inner">
+          <div class="container-fluid">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="https://sga.ifb.edu.br/"><img alt="Sga_icone" src="localtest_arquivos/SGA_icone-64f015d44d588c68c1565a7d01235ceb.png" width="20" height="20"> SGA</a>
+                <div class="pull-right profile-div">
+                    <a href="https://sga.ifb.edu.br/autenticacao/usuarios/sair" data-method="delete" rel="nofollow" data-original-title=""><i class="icon-off"></i> Sair</a>
+                </div>
+                <div class="nav-collapse">
+                  <ul class="nav">
+                    <li class="active"><a href="https://sga.ifb.edu.br/registro_academico" %=""> <i class="icon-edit"></i> Espaço Docente</a> </li><li class=""><a href="https://sga.ifb.edu.br/atualizacoes"><i class="icon-edit"> </i> Últimas Atualizações</a> </li><li class=""><a href="https://sga.ifb.edu.br/sobre"><i class="icon-list-alt"> </i> Sobre</a> </li><li><a href="https://sga.ifb.edu.br/session_roles/0?skip_destroy_validation=true" data-method="delete" rel="nofollow" data-original-title=""><i class="icon-retweet"></i> Trocar perfil</a></li>
+                  </ul>
+                </div><!--/.nav-collapse -->
+          </div>
+        </div>    
+  </div>
+  <!-- -->
+  
+  <!-- <div class="container-fluid">
+    <div class="row-fluid">           
+      <div class="span12">
+        <div class="row-fluid"> -->
+  
+  <div class="container-fluid">
+    <div class="row-fluid">
+        <!-- Menu Esquerdo -->
+          <div class="span12"> 
+            <div class="row-fluid" id="main"> 
+              <div class="span2" id="main-submenu">     
+                <div class="well sidebar-nav" id="main-submenu-sidebar">
+                  <div id="sub-menu-hidder-div">
+                    <a href="#" class="btn" data-remote="true" id="sub-menu-hidder"><i class="icon-arrow-left"></i></a>                   
+                  </div>
+                  <div id="sub-menu-top-title"><h4>Administração Acadêmica</h4></div>
+                  <div style="clear: both;"></div>
+                  <div class="user-profile">
+                    <div class="name"><i class="fa fa-user"></i> Marx Linden</div>
+                    <div class="profile">
+                      <strong> Professor(a) Doutor </strong><br>
+                       
+                    </div>
+                  </div>
+                  <ul class="nav nav-tabs nav-stacked">
+
+
+
+
+                          <li class="nav-header"><small>Cursos e Ciclos</small></li>
+
+                          <li class=""><a href="https://sga.ifb.edu.br/registro_academico/cursos"><i class="icon-book"></i><div class="sub-menu-text"><small>Cursos &amp; Disciplinas</small></div></a></li>
+                      
+                      
+                      
+                          
+
+                        <li class=""><a href="https://sga.ifb.edu.br/registro_academico/turmas"><i class="icon-group"></i><div class="sub-menu-text"><small>Turmas</small></div></a></li>
+                      
+                        <li class=""><a href="https://sga.ifb.edu.br/registro_academico/diarios"><i class="icon-pencil"></i><div class="sub-menu-text"><small>Diário do Docente</small></div></a></li>
+                  
+                      
+
+                        <li class=""><a href="https://sga.ifb.edu.br/registro_academico/tutoriais"><i class="fa fa-youtube-play"></i><div class="sub-menu-text"><small>Tutoriais</small></div></a></li>
+
+                        <li class=""><a href="https://sga.ifb.edu.br/registro_academico/welcome?titulation=true"><i class="icon-user"></i><div class="sub-menu-text"><small>Titulação Professor</small></div></a></li>
+
+
+
+                  </ul>
+                </div><!--/.well -->
+              </div><!--/span-->    
+              <div class="span10" id="main-content-div">
+              <div id="error-flash-messages"></div>
+                
+
+                <!-- Exibição dos erros -->
+                  
+                <!-- -->  
+                <div id="yield-div" style="min-height: 334px;">
+                <div id="breadcrumbs-div">
+                  <ul class="breadcrumb"><li></li><li class="active"></li></ul>
+                  <div id="right-icons" class="pull-right">
+                            <a href="#" data-original-title="Relatórios" data-placement="top" id="reports-link" rel="tooltip"><i class="icon-print"></i> </a>
+
+                  </div>
+                </div>
+
+                  
+<script type="text/javascript">
+	$(document).ready(function() {	
+		$('#check-all-class-record-presences').click(function(){
+			$("input:checkbox").each(function() {this.checked = true;});
+		});
+
+		$('#uncheck-all-class-record-presences').on('click', function(){
+			$("input:checkbox").each(function() {this.checked = false;});
+		});
+
+	});
+</script>
+
+<form accept-charset="UTF-8" action="/registro_academico/diarios/27109/aulas/update_presences_by_date" class="form-horizontal" id="form_presence" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="_method" type="hidden" value="put"><input name="authenticity_token" type="hidden" value="i/1+PtT2FXZhCQx3OxLGe6KljSfWpfTDUa+58YHba/s="></div>
+	<div class="page-header">
+	  <h3>
+		<i class="icon-check"></i> Presenças 
+	    <div class="pull-right">
+	      <span class="label label-info"><a href="https://sga.ifb.edu.br/registro_academico/diarios/27109" data-original-title="Componente Curricular" data-placement="top" rel="tooltip" style="color: white;">12345678-NOME </a> </span>
+	      <span class="label label-info"><a href="https://sga.ifb.edu.br/registro_academico/cursos/265/disciplinas/3476" data-original-title="Disciplina" data-placement="top" rel="tooltip" style="color: white;">Nome da disciplina</a> </span>
+	      <span class="label label-info"><a href="https://sga.ifb.edu.br/registro_academico/turmas/20201234" data-original-title="Turma" data-placement="top" rel="tooltip" style="color: white;">20201001203A</a> </span>
+	      <span class="label label-info"><a href="https://sga.ifb.edu.br/registro_academico/cursos/265" data-original-title="Curso" data-placement="top" rel="tooltip" style="color: white;">Técnico Subsequente em Desenvolvimento de Sistemas</a> </span>
+	    </div>
+
+
+	  <input id="day" name="day" type="hidden" value="2020-09-28">
+
+     <br> <small class="small-subtitle">Desenvolvimento de Sistemas para Web</small>
+
+    </h3>
+	</div>
+
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span3">		 				
+				<b>Marcado</b>: Presente. <br>
+				<b>Desmarcado</b>: Ausente.
+			</div>
+			<div class="span9" style="text-align: right;">
+								<button class="btn btn-primary" id="check-all-class-record-presences" type="button">
+									Marcar todos
+</button>								<button class="btn btn-warning" id="uncheck-all-class-record-presences" type="button">
+									Desmarcar todos
+</button>
+			</div>
+		</div>
+	</div>
+	<hr>
+	<table class="table table-striped" id="class-record-presence-table">
+	  <thead>
+	    <tr>
+		 <th width="5%"> </th>
+		 <th width="3%"> </th>
+         <th width="3%">#</th>
+	     <th width="79%">Aluno</th>
+	       <th style="text-align:center" width="13%">
+	          <center>28/09/2020 <br> 17:40 - 18:30<br> </center>
+	       </th>
+	       <th style="text-align:center" width="13%">
+	          <center>28/09/2020 <br> 16:50 - 17:40<br> </center>
+	       </th>
+	       <th style="text-align:center" width="13%">
+	          <center>28/09/2020 <br> 16:00 - 16:50<br> </center>
+	       </th>
+	       <th style="text-align:center" width="13%">
+	          <center>28/09/2020 <br> 14:50 - 15:40<br> </center>
+	       </th>
+	       <th style="text-align:center" width="13%">
+	          <center>28/09/2020 <br> 14:00 - 15:00<br> </center>
+	       </th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	      <tr>
+	      		<td><span style="color: #ddd;">111111</span> </td>
+              <td></td>
+            <td>1</td>
+		    <td>Nome do Aluno 1</td>
+				<td>
+					<center>
+							<input class="class-record-presence-check-enable" id="class_record_presence_ids_1455125_" name="class_record_presence_ids[1455125][]" type="checkbox" value="732307">	
+							<input id="class_record_presence_ids_enable_1455125_" name="class_record_presence_ids_enable[1455125][]" type="hidden" value="732307">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input class="class-record-presence-check-enable" id="class_record_presence_ids_1455124_" name="class_record_presence_ids[1455124][]" type="checkbox" value="732307">	
+							<input id="class_record_presence_ids_enable_1455124_" name="class_record_presence_ids_enable[1455124][]" type="hidden" value="732307">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input class="class-record-presence-check-enable" id="class_record_presence_ids_1455123_" name="class_record_presence_ids[1455123][]" type="checkbox" value="732307">	
+							<input id="class_record_presence_ids_enable_1455123_" name="class_record_presence_ids_enable[1455123][]" type="hidden" value="732307">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input class="class-record-presence-check-enable" id="class_record_presence_ids_1455122_" name="class_record_presence_ids[1455122][]" type="checkbox" value="732307">	
+							<input id="class_record_presence_ids_enable_1455122_" name="class_record_presence_ids_enable[1455122][]" type="hidden" value="732307">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input class="class-record-presence-check-enable" id="class_record_presence_ids_1455121_" name="class_record_presence_ids[1455121][]" type="checkbox" value="732307">	
+							<input id="class_record_presence_ids_enable_1455121_" name="class_record_presence_ids_enable[1455121][]" type="hidden" value="732307">
+					</center>
+				</td>
+		  </tr>
+	      <tr>
+	      		<td><span style="color: #ddd;">222222</span> </td>
+              <td></td>
+            <td>2</td>
+		    <td>Nome do Aluno 2</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455125_" name="class_record_presence_ids[1455125][]" type="checkbox" value="698012">	
+							<input id="class_record_presence_ids_enable_1455125_" name="class_record_presence_ids_enable[1455125][]" type="hidden" value="698012">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455124_" name="class_record_presence_ids[1455124][]" type="checkbox" value="698012">	
+							<input id="class_record_presence_ids_enable_1455124_" name="class_record_presence_ids_enable[1455124][]" type="hidden" value="698012">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455123_" name="class_record_presence_ids[1455123][]" type="checkbox" value="698012">	
+							<input id="class_record_presence_ids_enable_1455123_" name="class_record_presence_ids_enable[1455123][]" type="hidden" value="698012">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455122_" name="class_record_presence_ids[1455122][]" type="checkbox" value="698012">	
+							<input id="class_record_presence_ids_enable_1455122_" name="class_record_presence_ids_enable[1455122][]" type="hidden" value="698012">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455121_" name="class_record_presence_ids[1455121][]" type="checkbox" value="698012">	
+							<input id="class_record_presence_ids_enable_1455121_" name="class_record_presence_ids_enable[1455121][]" type="hidden" value="698012">
+					</center>
+				</td>
+		  </tr>
+	      <tr>
+	      		<td><span style="color: #ddd;">333333</span> </td>
+              <td></td>
+            <td>3</td>
+		    <td>Nome do Aluno 3</td>
+				<td>
+					<center>
+							<input class="class-record-presence-check-enable" id="class_record_presence_ids_1455125_" name="class_record_presence_ids[1455125][]" type="checkbox" value="697873">	
+							<input id="class_record_presence_ids_enable_1455125_" name="class_record_presence_ids_enable[1455125][]" type="hidden" value="697873">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input class="class-record-presence-check-enable" id="class_record_presence_ids_1455124_" name="class_record_presence_ids[1455124][]" type="checkbox" value="697873">	
+							<input id="class_record_presence_ids_enable_1455124_" name="class_record_presence_ids_enable[1455124][]" type="hidden" value="697873">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input class="class-record-presence-check-enable" id="class_record_presence_ids_1455123_" name="class_record_presence_ids[1455123][]" type="checkbox" value="697873">	
+							<input id="class_record_presence_ids_enable_1455123_" name="class_record_presence_ids_enable[1455123][]" type="hidden" value="697873">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input class="class-record-presence-check-enable" id="class_record_presence_ids_1455122_" name="class_record_presence_ids[1455122][]" type="checkbox" value="697873">	
+							<input id="class_record_presence_ids_enable_1455122_" name="class_record_presence_ids_enable[1455122][]" type="hidden" value="697873">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input class="class-record-presence-check-enable" id="class_record_presence_ids_1455121_" name="class_record_presence_ids[1455121][]" type="checkbox" value="697873">	
+							<input id="class_record_presence_ids_enable_1455121_" name="class_record_presence_ids_enable[1455121][]" type="hidden" value="697873">
+					</center>
+				</td>
+		  </tr>
+	      <tr>
+	      		<td><span style="color: #ddd;">444444</span> </td>
+              <td></td>
+            <td>4</td>
+		    <td>Nome do Aluno 4</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455125_" name="class_record_presence_ids[1455125][]" type="checkbox" value="697905">	
+							<input id="class_record_presence_ids_enable_1455125_" name="class_record_presence_ids_enable[1455125][]" type="hidden" value="697905">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455124_" name="class_record_presence_ids[1455124][]" type="checkbox" value="697905">	
+							<input id="class_record_presence_ids_enable_1455124_" name="class_record_presence_ids_enable[1455124][]" type="hidden" value="697905">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455123_" name="class_record_presence_ids[1455123][]" type="checkbox" value="697905">	
+							<input id="class_record_presence_ids_enable_1455123_" name="class_record_presence_ids_enable[1455123][]" type="hidden" value="697905">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455122_" name="class_record_presence_ids[1455122][]" type="checkbox" value="697905">	
+							<input id="class_record_presence_ids_enable_1455122_" name="class_record_presence_ids_enable[1455122][]" type="hidden" value="697905">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455121_" name="class_record_presence_ids[1455121][]" type="checkbox" value="697905">	
+							<input id="class_record_presence_ids_enable_1455121_" name="class_record_presence_ids_enable[1455121][]" type="hidden" value="697905">
+					</center>
+				</td>
+		  </tr>
+	      <tr>
+	      		<td><span style="color: #ddd;">555555</span> </td>
+              <td></td>
+            <td>5</td>
+		    <td>Nome do Aluno 5</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455125_" name="class_record_presence_ids[1455125][]" type="checkbox" value="697912">	
+							<input id="class_record_presence_ids_enable_1455125_" name="class_record_presence_ids_enable[1455125][]" type="hidden" value="697912">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455124_" name="class_record_presence_ids[1455124][]" type="checkbox" value="697912">	
+							<input id="class_record_presence_ids_enable_1455124_" name="class_record_presence_ids_enable[1455124][]" type="hidden" value="697912">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455123_" name="class_record_presence_ids[1455123][]" type="checkbox" value="697912">	
+							<input id="class_record_presence_ids_enable_1455123_" name="class_record_presence_ids_enable[1455123][]" type="hidden" value="697912">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455122_" name="class_record_presence_ids[1455122][]" type="checkbox" value="697912">	
+							<input id="class_record_presence_ids_enable_1455122_" name="class_record_presence_ids_enable[1455122][]" type="hidden" value="697912">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455121_" name="class_record_presence_ids[1455121][]" type="checkbox" value="697912">	
+							<input id="class_record_presence_ids_enable_1455121_" name="class_record_presence_ids_enable[1455121][]" type="hidden" value="697912">
+					</center>
+				</td>
+		  </tr>
+	      <tr>
+	      		<td><span style="color: #ddd;">666666</span> </td>
+              <td></td>
+            <td>6</td>
+		    <td>Nome do Aluno 6</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455125_" name="class_record_presence_ids[1455125][]" type="checkbox" value="697969">	
+							<input id="class_record_presence_ids_enable_1455125_" name="class_record_presence_ids_enable[1455125][]" type="hidden" value="697969">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455124_" name="class_record_presence_ids[1455124][]" type="checkbox" value="697969">	
+							<input id="class_record_presence_ids_enable_1455124_" name="class_record_presence_ids_enable[1455124][]" type="hidden" value="697969">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455123_" name="class_record_presence_ids[1455123][]" type="checkbox" value="697969">	
+							<input id="class_record_presence_ids_enable_1455123_" name="class_record_presence_ids_enable[1455123][]" type="hidden" value="697969">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455122_" name="class_record_presence_ids[1455122][]" type="checkbox" value="697969">	
+							<input id="class_record_presence_ids_enable_1455122_" name="class_record_presence_ids_enable[1455122][]" type="hidden" value="697969">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455121_" name="class_record_presence_ids[1455121][]" type="checkbox" value="697969">	
+							<input id="class_record_presence_ids_enable_1455121_" name="class_record_presence_ids_enable[1455121][]" type="hidden" value="697969">
+					</center>
+				</td>
+		  </tr>
+	      <tr>
+	      		<td><span style="color: #ddd;">777777</span> </td>
+              <td></td>
+            <td>7</td>
+		    <td>Nome do Aluno 7</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455125_" name="class_record_presence_ids[1455125][]" type="checkbox" value="697882">	
+							<input id="class_record_presence_ids_enable_1455125_" name="class_record_presence_ids_enable[1455125][]" type="hidden" value="697882">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455124_" name="class_record_presence_ids[1455124][]" type="checkbox" value="697882">	
+							<input id="class_record_presence_ids_enable_1455124_" name="class_record_presence_ids_enable[1455124][]" type="hidden" value="697882">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455123_" name="class_record_presence_ids[1455123][]" type="checkbox" value="697882">	
+							<input id="class_record_presence_ids_enable_1455123_" name="class_record_presence_ids_enable[1455123][]" type="hidden" value="697882">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455122_" name="class_record_presence_ids[1455122][]" type="checkbox" value="697882">	
+							<input id="class_record_presence_ids_enable_1455122_" name="class_record_presence_ids_enable[1455122][]" type="hidden" value="697882">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455121_" name="class_record_presence_ids[1455121][]" type="checkbox" value="697882">	
+							<input id="class_record_presence_ids_enable_1455121_" name="class_record_presence_ids_enable[1455121][]" type="hidden" value="697882">
+					</center>
+				</td>
+		  </tr>
+	      <tr>
+	      		<td><span style="color: #ddd;">888888</span> </td>
+              <td></td>
+            <td>8</td>
+		    <td>Nome do Aluno 8</td>
+				<td>
+					<center>
+							<input class="class-record-presence-check-enable" id="class_record_presence_ids_1455125_" name="class_record_presence_ids[1455125][]" type="checkbox" value="697850">	
+							<input id="class_record_presence_ids_enable_1455125_" name="class_record_presence_ids_enable[1455125][]" type="hidden" value="697850">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input class="class-record-presence-check-enable" id="class_record_presence_ids_1455124_" name="class_record_presence_ids[1455124][]" type="checkbox" value="697850">	
+							<input id="class_record_presence_ids_enable_1455124_" name="class_record_presence_ids_enable[1455124][]" type="hidden" value="697850">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input class="class-record-presence-check-enable" id="class_record_presence_ids_1455123_" name="class_record_presence_ids[1455123][]" type="checkbox" value="697850">	
+							<input id="class_record_presence_ids_enable_1455123_" name="class_record_presence_ids_enable[1455123][]" type="hidden" value="697850">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input class="class-record-presence-check-enable" id="class_record_presence_ids_1455122_" name="class_record_presence_ids[1455122][]" type="checkbox" value="697850">	
+							<input id="class_record_presence_ids_enable_1455122_" name="class_record_presence_ids_enable[1455122][]" type="hidden" value="697850">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input class="class-record-presence-check-enable" id="class_record_presence_ids_1455121_" name="class_record_presence_ids[1455121][]" type="checkbox" value="697850">	
+							<input id="class_record_presence_ids_enable_1455121_" name="class_record_presence_ids_enable[1455121][]" type="hidden" value="697850">
+					</center>
+				</td>
+		  </tr>
+	      <tr>
+	      		<td><span style="color: #ddd;">999999</span> </td>
+              <td></td>
+            <td>9</td>
+		    <td>Nome do Aluno 9</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455125_" name="class_record_presence_ids[1455125][]" type="checkbox" value="690139">	
+							<input id="class_record_presence_ids_enable_1455125_" name="class_record_presence_ids_enable[1455125][]" type="hidden" value="690139">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455124_" name="class_record_presence_ids[1455124][]" type="checkbox" value="690139">	
+							<input id="class_record_presence_ids_enable_1455124_" name="class_record_presence_ids_enable[1455124][]" type="hidden" value="690139">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455123_" name="class_record_presence_ids[1455123][]" type="checkbox" value="690139">	
+							<input id="class_record_presence_ids_enable_1455123_" name="class_record_presence_ids_enable[1455123][]" type="hidden" value="690139">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455122_" name="class_record_presence_ids[1455122][]" type="checkbox" value="690139">	
+							<input id="class_record_presence_ids_enable_1455122_" name="class_record_presence_ids_enable[1455122][]" type="hidden" value="690139">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455121_" name="class_record_presence_ids[1455121][]" type="checkbox" value="690139">	
+							<input id="class_record_presence_ids_enable_1455121_" name="class_record_presence_ids_enable[1455121][]" type="hidden" value="690139">
+					</center>
+				</td>
+		  </tr>
+	      <tr>
+	      		<td><span style="color: #ddd;">000000</span> </td>
+              <td></td>
+            <td>10</td>
+		    <td>Nome do Aluno 10</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455125_" name="class_record_presence_ids[1455125][]" type="checkbox" value="699255">	
+							<input id="class_record_presence_ids_enable_1455125_" name="class_record_presence_ids_enable[1455125][]" type="hidden" value="699255">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455124_" name="class_record_presence_ids[1455124][]" type="checkbox" value="699255">	
+							<input id="class_record_presence_ids_enable_1455124_" name="class_record_presence_ids_enable[1455124][]" type="hidden" value="699255">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455123_" name="class_record_presence_ids[1455123][]" type="checkbox" value="699255">	
+							<input id="class_record_presence_ids_enable_1455123_" name="class_record_presence_ids_enable[1455123][]" type="hidden" value="699255">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455122_" name="class_record_presence_ids[1455122][]" type="checkbox" value="699255">	
+							<input id="class_record_presence_ids_enable_1455122_" name="class_record_presence_ids_enable[1455122][]" type="hidden" value="699255">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455121_" name="class_record_presence_ids[1455121][]" type="checkbox" value="699255">	
+							<input id="class_record_presence_ids_enable_1455121_" name="class_record_presence_ids_enable[1455121][]" type="hidden" value="699255">
+					</center>
+				</td>
+		  </tr>
+	      <tr>
+	      		<td><span style="color: #ddd;">111111</span> </td>
+              <td></td>
+            <td>11</td>
+		    <td>Nome do Aluno 11</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455125_" name="class_record_presence_ids[1455125][]" type="checkbox" value="732590">	
+							<input id="class_record_presence_ids_enable_1455125_" name="class_record_presence_ids_enable[1455125][]" type="hidden" value="732590">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455124_" name="class_record_presence_ids[1455124][]" type="checkbox" value="732590">	
+							<input id="class_record_presence_ids_enable_1455124_" name="class_record_presence_ids_enable[1455124][]" type="hidden" value="732590">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455123_" name="class_record_presence_ids[1455123][]" type="checkbox" value="732590">	
+							<input id="class_record_presence_ids_enable_1455123_" name="class_record_presence_ids_enable[1455123][]" type="hidden" value="732590">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455122_" name="class_record_presence_ids[1455122][]" type="checkbox" value="732590">	
+							<input id="class_record_presence_ids_enable_1455122_" name="class_record_presence_ids_enable[1455122][]" type="hidden" value="732590">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455121_" name="class_record_presence_ids[1455121][]" type="checkbox" value="732590">	
+							<input id="class_record_presence_ids_enable_1455121_" name="class_record_presence_ids_enable[1455121][]" type="hidden" value="732590">
+					</center>
+				</td>
+		  </tr>
+	      <tr>
+	      		<td><span style="color: #ddd;">121212</span> </td>
+              <td></td>
+            <td>12</td>
+		    <td>Nome do Aluno 12</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455125_" name="class_record_presence_ids[1455125][]" type="checkbox" value="742529">	
+							<input id="class_record_presence_ids_enable_1455125_" name="class_record_presence_ids_enable[1455125][]" type="hidden" value="742529">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455124_" name="class_record_presence_ids[1455124][]" type="checkbox" value="742529">	
+							<input id="class_record_presence_ids_enable_1455124_" name="class_record_presence_ids_enable[1455124][]" type="hidden" value="742529">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455123_" name="class_record_presence_ids[1455123][]" type="checkbox" value="742529">	
+							<input id="class_record_presence_ids_enable_1455123_" name="class_record_presence_ids_enable[1455123][]" type="hidden" value="742529">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455122_" name="class_record_presence_ids[1455122][]" type="checkbox" value="742529">	
+							<input id="class_record_presence_ids_enable_1455122_" name="class_record_presence_ids_enable[1455122][]" type="hidden" value="742529">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455121_" name="class_record_presence_ids[1455121][]" type="checkbox" value="742529">	
+							<input id="class_record_presence_ids_enable_1455121_" name="class_record_presence_ids_enable[1455121][]" type="hidden" value="742529">
+					</center>
+				</td>
+		  </tr>
+	      <tr>
+	      		<td><span style="color: #ddd;">131313</span> </td>
+              <td></td>
+            <td>13</td>
+		    <td>Nome do Aluno 13</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455125_" name="class_record_presence_ids[1455125][]" type="checkbox" value="697920">	
+							<input id="class_record_presence_ids_enable_1455125_" name="class_record_presence_ids_enable[1455125][]" type="hidden" value="697920">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455124_" name="class_record_presence_ids[1455124][]" type="checkbox" value="697920">	
+							<input id="class_record_presence_ids_enable_1455124_" name="class_record_presence_ids_enable[1455124][]" type="hidden" value="697920">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455123_" name="class_record_presence_ids[1455123][]" type="checkbox" value="697920">	
+							<input id="class_record_presence_ids_enable_1455123_" name="class_record_presence_ids_enable[1455123][]" type="hidden" value="697920">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455122_" name="class_record_presence_ids[1455122][]" type="checkbox" value="697920">	
+							<input id="class_record_presence_ids_enable_1455122_" name="class_record_presence_ids_enable[1455122][]" type="hidden" value="697920">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455121_" name="class_record_presence_ids[1455121][]" type="checkbox" value="697920">	
+							<input id="class_record_presence_ids_enable_1455121_" name="class_record_presence_ids_enable[1455121][]" type="hidden" value="697920">
+					</center>
+				</td>
+		  </tr>
+	      <tr>
+	      		<td><span style="color: #ddd;">141414</span> </td>
+              <td></td>
+            <td>14</td>
+		    <td>Nome do Aluno 14</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455125_" name="class_record_presence_ids[1455125][]" type="checkbox" value="697860">	
+							<input id="class_record_presence_ids_enable_1455125_" name="class_record_presence_ids_enable[1455125][]" type="hidden" value="697860">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455124_" name="class_record_presence_ids[1455124][]" type="checkbox" value="697860">	
+							<input id="class_record_presence_ids_enable_1455124_" name="class_record_presence_ids_enable[1455124][]" type="hidden" value="697860">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455123_" name="class_record_presence_ids[1455123][]" type="checkbox" value="697860">	
+							<input id="class_record_presence_ids_enable_1455123_" name="class_record_presence_ids_enable[1455123][]" type="hidden" value="697860">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455122_" name="class_record_presence_ids[1455122][]" type="checkbox" value="697860">	
+							<input id="class_record_presence_ids_enable_1455122_" name="class_record_presence_ids_enable[1455122][]" type="hidden" value="697860">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455121_" name="class_record_presence_ids[1455121][]" type="checkbox" value="697860">	
+							<input id="class_record_presence_ids_enable_1455121_" name="class_record_presence_ids_enable[1455121][]" type="hidden" value="697860">
+					</center>
+				</td>
+		  </tr>
+	      <tr>
+	      		<td><span style="color: #ddd;">151515</span> </td>
+              <td></td>
+            <td>15</td>
+		    <td>Nome do Aluno 15</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455125_" name="class_record_presence_ids[1455125][]" type="checkbox" value="697998">	
+							<input id="class_record_presence_ids_enable_1455125_" name="class_record_presence_ids_enable[1455125][]" type="hidden" value="697998">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455124_" name="class_record_presence_ids[1455124][]" type="checkbox" value="697998">	
+							<input id="class_record_presence_ids_enable_1455124_" name="class_record_presence_ids_enable[1455124][]" type="hidden" value="697998">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455123_" name="class_record_presence_ids[1455123][]" type="checkbox" value="697998">	
+							<input id="class_record_presence_ids_enable_1455123_" name="class_record_presence_ids_enable[1455123][]" type="hidden" value="697998">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455122_" name="class_record_presence_ids[1455122][]" type="checkbox" value="697998">	
+							<input id="class_record_presence_ids_enable_1455122_" name="class_record_presence_ids_enable[1455122][]" type="hidden" value="697998">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455121_" name="class_record_presence_ids[1455121][]" type="checkbox" value="697998">	
+							<input id="class_record_presence_ids_enable_1455121_" name="class_record_presence_ids_enable[1455121][]" type="hidden" value="697998">
+					</center>
+				</td>
+		  </tr>
+	      <tr>
+	      		<td><span style="color: #ddd;">161616</span> </td>
+              <td></td>
+            <td>16</td>
+		    <td>Nome do Aluno 16</td>
+				<td>
+					<center>
+							<input class="class-record-presence-check-enable" id="class_record_presence_ids_1455125_" name="class_record_presence_ids[1455125][]" type="checkbox" value="732194">	
+							<input id="class_record_presence_ids_enable_1455125_" name="class_record_presence_ids_enable[1455125][]" type="hidden" value="732194">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input class="class-record-presence-check-enable" id="class_record_presence_ids_1455124_" name="class_record_presence_ids[1455124][]" type="checkbox" value="732194">	
+							<input id="class_record_presence_ids_enable_1455124_" name="class_record_presence_ids_enable[1455124][]" type="hidden" value="732194">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input class="class-record-presence-check-enable" id="class_record_presence_ids_1455123_" name="class_record_presence_ids[1455123][]" type="checkbox" value="732194">	
+							<input id="class_record_presence_ids_enable_1455123_" name="class_record_presence_ids_enable[1455123][]" type="hidden" value="732194">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input class="class-record-presence-check-enable" id="class_record_presence_ids_1455122_" name="class_record_presence_ids[1455122][]" type="checkbox" value="732194">	
+							<input id="class_record_presence_ids_enable_1455122_" name="class_record_presence_ids_enable[1455122][]" type="hidden" value="732194">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input class="class-record-presence-check-enable" id="class_record_presence_ids_1455121_" name="class_record_presence_ids[1455121][]" type="checkbox" value="732194">	
+							<input id="class_record_presence_ids_enable_1455121_" name="class_record_presence_ids_enable[1455121][]" type="hidden" value="732194">
+					</center>
+				</td>
+		  </tr>
+	      <tr>
+	      		<td><span style="color: #ddd;">171717</span> </td>
+              <td></td>
+            <td>17</td>
+		    <td>Nome do Aluno 17</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455125_" name="class_record_presence_ids[1455125][]" type="checkbox" value="696290">	
+							<input id="class_record_presence_ids_enable_1455125_" name="class_record_presence_ids_enable[1455125][]" type="hidden" value="696290">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455124_" name="class_record_presence_ids[1455124][]" type="checkbox" value="696290">	
+							<input id="class_record_presence_ids_enable_1455124_" name="class_record_presence_ids_enable[1455124][]" type="hidden" value="696290">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455123_" name="class_record_presence_ids[1455123][]" type="checkbox" value="696290">	
+							<input id="class_record_presence_ids_enable_1455123_" name="class_record_presence_ids_enable[1455123][]" type="hidden" value="696290">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455122_" name="class_record_presence_ids[1455122][]" type="checkbox" value="696290">	
+							<input id="class_record_presence_ids_enable_1455122_" name="class_record_presence_ids_enable[1455122][]" type="hidden" value="696290">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455121_" name="class_record_presence_ids[1455121][]" type="checkbox" value="696290">	
+							<input id="class_record_presence_ids_enable_1455121_" name="class_record_presence_ids_enable[1455121][]" type="hidden" value="696290">
+					</center>
+				</td>
+		  </tr>
+	      <tr>
+	      		<td><span style="color: #ddd;">181818</span> </td>
+              <td></td>
+            <td>18</td>
+		    <td>Nome do Aluno 18</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455125_" name="class_record_presence_ids[1455125][]" type="checkbox" value="697855">	
+							<input id="class_record_presence_ids_enable_1455125_" name="class_record_presence_ids_enable[1455125][]" type="hidden" value="697855">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455124_" name="class_record_presence_ids[1455124][]" type="checkbox" value="697855">	
+							<input id="class_record_presence_ids_enable_1455124_" name="class_record_presence_ids_enable[1455124][]" type="hidden" value="697855">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455123_" name="class_record_presence_ids[1455123][]" type="checkbox" value="697855">	
+							<input id="class_record_presence_ids_enable_1455123_" name="class_record_presence_ids_enable[1455123][]" type="hidden" value="697855">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455122_" name="class_record_presence_ids[1455122][]" type="checkbox" value="697855">	
+							<input id="class_record_presence_ids_enable_1455122_" name="class_record_presence_ids_enable[1455122][]" type="hidden" value="697855">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455121_" name="class_record_presence_ids[1455121][]" type="checkbox" value="697855">	
+							<input id="class_record_presence_ids_enable_1455121_" name="class_record_presence_ids_enable[1455121][]" type="hidden" value="697855">
+					</center>
+				</td>
+		  </tr>
+	      <tr>
+	      		<td><span style="color: #ddd;">191919</span> </td>
+              <td></td>
+            <td>19</td>
+		    <td>Nome do Aluno 19</td>
+				<td>
+					<center>
+							<input class="class-record-presence-check-enable" id="class_record_presence_ids_1455125_" name="class_record_presence_ids[1455125][]" type="checkbox" value="742120">	
+							<input id="class_record_presence_ids_enable_1455125_" name="class_record_presence_ids_enable[1455125][]" type="hidden" value="742120">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input class="class-record-presence-check-enable" id="class_record_presence_ids_1455124_" name="class_record_presence_ids[1455124][]" type="checkbox" value="742120">	
+							<input id="class_record_presence_ids_enable_1455124_" name="class_record_presence_ids_enable[1455124][]" type="hidden" value="742120">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input class="class-record-presence-check-enable" id="class_record_presence_ids_1455123_" name="class_record_presence_ids[1455123][]" type="checkbox" value="742120">	
+							<input id="class_record_presence_ids_enable_1455123_" name="class_record_presence_ids_enable[1455123][]" type="hidden" value="742120">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input class="class-record-presence-check-enable" id="class_record_presence_ids_1455122_" name="class_record_presence_ids[1455122][]" type="checkbox" value="742120">	
+							<input id="class_record_presence_ids_enable_1455122_" name="class_record_presence_ids_enable[1455122][]" type="hidden" value="742120">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input class="class-record-presence-check-enable" id="class_record_presence_ids_1455121_" name="class_record_presence_ids[1455121][]" type="checkbox" value="742120">	
+							<input id="class_record_presence_ids_enable_1455121_" name="class_record_presence_ids_enable[1455121][]" type="hidden" value="742120">
+					</center>
+				</td>
+		  </tr>
+	      <tr>
+	      		<td><span style="color: #ddd;">202020</span> </td>
+              <td></td>
+            <td>20</td>
+		    <td>Nome do Aluno 20</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455125_" name="class_record_presence_ids[1455125][]" type="checkbox" value="725421">	
+							<input id="class_record_presence_ids_enable_1455125_" name="class_record_presence_ids_enable[1455125][]" type="hidden" value="725421">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455124_" name="class_record_presence_ids[1455124][]" type="checkbox" value="725421">	
+							<input id="class_record_presence_ids_enable_1455124_" name="class_record_presence_ids_enable[1455124][]" type="hidden" value="725421">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455123_" name="class_record_presence_ids[1455123][]" type="checkbox" value="725421">	
+							<input id="class_record_presence_ids_enable_1455123_" name="class_record_presence_ids_enable[1455123][]" type="hidden" value="725421">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455122_" name="class_record_presence_ids[1455122][]" type="checkbox" value="725421">	
+							<input id="class_record_presence_ids_enable_1455122_" name="class_record_presence_ids_enable[1455122][]" type="hidden" value="725421">
+					</center>
+				</td>
+				<td>
+					<center>
+							<input checked="checked" class="class-record-presence-check-enable" id="class_record_presence_ids_1455121_" name="class_record_presence_ids[1455121][]" type="checkbox" value="725421">	
+							<input id="class_record_presence_ids_enable_1455121_" name="class_record_presence_ids_enable[1455121][]" type="hidden" value="725421">
+					</center>
+				</td>
+		  </tr>
+	  </tbody>
+	</table>
+
+	<div class="form-actions">
+		<a href="https://sga.ifb.edu.br/registro_academico/diarios/27109/aulas/classdateselect" class="btn"><i class="icon-arrow-left"></i> Voltar</a>
+		<input class="btn btn-primary" name="commit" type="submit" value="Salvar chamada">
+
+	</div>
+</form>                                  
+                </div>
+              </div>  
+              <div id="reports-div" class="span2" style="display: none;">
+                <div id="reports-body">
+                  <ul>
+                    
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>    
+
+
+    </div><!--/span-->
+  </div><!--/container-fluid-->
+        
+  <hr class="bottom-hr">
+
+        <footer>
+          <p></p><center><img alt="Ifb_sigla" src="localtest_arquivos/ifb_sigla-eac36b1e5e92dddcc491c75cd5550a59.png" width="25" height="25"> <a href="http://www.ifb.edu.br/">- Instituto Federal de Brasília</a> </center><p></p>
+        </footer>
+
+      <!--/.fluid-container-->
+  
+    <!-- Modal -->
+    <div id="sga-submit-spin" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <h4 id="myModalLabel">Por favor, aguarde...</h4>
+      </div>
+      <div class="modal-body">
+        <div id="sga-div-spin" style="position: relative;width: 100%;height: 100px;"><div class="spinner" style="position: absolute; width: 0px; z-index: 2000000000; left: 50%; top: 50%;" role="progressbar"><div style="position: absolute; top: -1px; opacity: 0.25; animation: 1s linear 0s infinite normal none running opacity-60-25-0-13;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0) none repeat scroll 0% 0%; box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center 0px; transform: rotate(0deg) translate(15px); border-radius: 1px;"></div></div><div style="position: absolute; top: -1px; opacity: 0.25; animation: 1s linear 0s infinite normal none running opacity-60-25-1-13;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0) none repeat scroll 0% 0%; box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center 0px; transform: rotate(27deg) translate(15px); border-radius: 1px;"></div></div><div style="position: absolute; top: -1px; opacity: 0.25; animation: 1s linear 0s infinite normal none running opacity-60-25-2-13;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0) none repeat scroll 0% 0%; box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center 0px; transform: rotate(55deg) translate(15px); border-radius: 1px;"></div></div><div style="position: absolute; top: -1px; opacity: 0.25; animation: 1s linear 0s infinite normal none running opacity-60-25-3-13;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0) none repeat scroll 0% 0%; box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center 0px; transform: rotate(83deg) translate(15px); border-radius: 1px;"></div></div><div style="position: absolute; top: -1px; opacity: 0.25; animation: 1s linear 0s infinite normal none running opacity-60-25-4-13;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0) none repeat scroll 0% 0%; box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center 0px; transform: rotate(110deg) translate(15px); border-radius: 1px;"></div></div><div style="position: absolute; top: -1px; opacity: 0.25; animation: 1s linear 0s infinite normal none running opacity-60-25-5-13;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0) none repeat scroll 0% 0%; box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center 0px; transform: rotate(138deg) translate(15px); border-radius: 1px;"></div></div><div style="position: absolute; top: -1px; opacity: 0.25; animation: 1s linear 0s infinite normal none running opacity-60-25-6-13;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0) none repeat scroll 0% 0%; box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center 0px; transform: rotate(166deg) translate(15px); border-radius: 1px;"></div></div><div style="position: absolute; top: -1px; opacity: 0.25; animation: 1s linear 0s infinite normal none running opacity-60-25-7-13;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0) none repeat scroll 0% 0%; box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center 0px; transform: rotate(193deg) translate(15px); border-radius: 1px;"></div></div><div style="position: absolute; top: -1px; opacity: 0.25; animation: 1s linear 0s infinite normal none running opacity-60-25-8-13;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0) none repeat scroll 0% 0%; box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center 0px; transform: rotate(221deg) translate(15px); border-radius: 1px;"></div></div><div style="position: absolute; top: -1px; opacity: 0.25; animation: 1s linear 0s infinite normal none running opacity-60-25-9-13;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0) none repeat scroll 0% 0%; box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center 0px; transform: rotate(249deg) translate(15px); border-radius: 1px;"></div></div><div style="position: absolute; top: -1px; opacity: 0.25; animation: 1s linear 0s infinite normal none running opacity-60-25-10-13;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0) none repeat scroll 0% 0%; box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center 0px; transform: rotate(276deg) translate(15px); border-radius: 1px;"></div></div><div style="position: absolute; top: -1px; opacity: 0.25; animation: 1s linear 0s infinite normal none running opacity-60-25-11-13;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0) none repeat scroll 0% 0%; box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center 0px; transform: rotate(304deg) translate(15px); border-radius: 1px;"></div></div><div style="position: absolute; top: -1px; opacity: 0.25; animation: 1s linear 0s infinite normal none running opacity-60-25-12-13;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0) none repeat scroll 0% 0%; box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center 0px; transform: rotate(332deg) translate(15px); border-radius: 1px;"></div></div></div></div>
+      </div>
+    </div>
+
+<script src="sgahelper.js"></script>
+</body></html>
