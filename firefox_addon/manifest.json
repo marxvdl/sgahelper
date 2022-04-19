@@ -1,0 +1,13 @@
+{
+  "manifest_version": 2,
+  "name": "sgahelper",
+  "version": "1.0",
+  "description": "Bookmarklet com aprimoramentos para o SGA",
+  "author": "Marx Linden",
+  "content_scripts": [
+    {
+      "matches": ["*://sga.ifb.edu.br/*"],
+      "js": ["sgahelper.js"]
+    }
+  ]
+}
