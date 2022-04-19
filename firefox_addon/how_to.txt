@@ -1,0 +1,3 @@
+- Copiar sga_helper.js para esta pasta
+- Criar um zip com o manifest.json e sga_helper.js
+- Assinar: https://extensionworkshop.com/documentation/publish/package-your-extension/
